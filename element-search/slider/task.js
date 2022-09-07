@@ -4,7 +4,7 @@ const arrowPrev = document.querySelector('.slider__arrow_prev');
 const arrowNext = document.querySelector('.slider__arrow_next');
 
 function clickNext() {
-    for (i = 0; i < sliders.length; i++) {
+    for (let i = 0; i < sliders.length; i++) {
         if (sliders[i].classList.contains('slider__item_active')) {
             sliders[i].classList.remove('slider__item_active');
             sliders[++i].classList.add('slider__item_active');
@@ -16,7 +16,7 @@ function clickNext() {
 }
 
 function clickPrev() {
-    for (i = (sliders.length - 1); i >= 0; i--) {      
+    for (let i = (sliders.length - 1); i >= 0; i--) {      
         if (sliders[i].classList.contains('slider__item_active')) {
             sliders[i].classList.remove('slider__item_active')
             sliders[--i].classList.add('slider__item_active');

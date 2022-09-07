@@ -3,7 +3,7 @@ const menuItemsLinks = Array.from(document.querySelectorAll('.menu_main > li.men
 console.log(menuItemsLinks);
 console.log(menuItemsLinks[0].nextElementSibling)
 
-for (i = 0; i < menuItemsLinks.length; i++) {
+for (let i = 0; i < menuItemsLinks.length; i++) {
     menuItemsLinks[i].onclick = openSubMenu;
 };
 
