@@ -18,12 +18,18 @@ class Game {
 
   registerEvents() {
     /*
-      TODO:
-      Написать обработчик события, который откликается
-      на каждый введённый символ.
-      В случае правильного ввода слова вызываем this.success()
-      При неправильном вводе символа - this.fail();
-     */
+    document.onkeydown = (event) => console.log(event.key);
+    */
+   
+    document.addEventListener('keydown', verifyKey);
+    
+    function verifyKey(event) {
+      if (this.currentSymbol.textContent === event.key.toLowerCase()) { //ошибка чтения textContent? 
+        this.success();
+      } else {
+        this.fail();
+      }
+    }
   }
 
   success() {
