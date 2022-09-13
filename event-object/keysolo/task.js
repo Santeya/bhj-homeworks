@@ -17,19 +17,13 @@ class Game {
   }
 
   registerEvents() {
-    /*
-    document.onkeydown = (event) => console.log(event.key);
-    */
-   
-    document.addEventListener('keydown', verifyKey);
-    
-    function verifyKey(event) {
-      if (this.currentSymbol.textContent === event.key.toLowerCase()) { //ошибка чтения textContent? 
+    document.addEventListener('keydown', (event => {
+      if (this.currentSymbol.textContent === event.key.toLowerCase()) { 
         this.success();
       } else {
         this.fail();
       }
-    }
+    }));
   }
 
   success() {
