@@ -9,9 +9,9 @@ function addTaskByButton(event) {
     if (newTask.value !== '') {
         tasks.innerHTML += `
         <div class="task">
-            <div class="task__title">`
-            + newTask.value +
-            `</div>
+            <div class="task__title">
+            ${ newTask.value}
+            </div>
             <a href="#" class="task__remove">&times;</a>
         </div>`
         newTask.value = '';
