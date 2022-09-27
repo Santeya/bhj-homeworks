@@ -4,6 +4,11 @@ const currencyList = document.getElementById('items');
 const xhr = new XMLHttpRequest();
 
 const handler = function () {
+    xhr.onload = () => {
+        if (xhr.status !== 200) {
+            alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+        }
+    }
     if (xhr.readyState === xhr.DONE) {
         document.getElementById('loader').classList.remove('loader_active');
         
@@ -18,7 +23,7 @@ const handler = function () {
                 <div class="item__value">${responseValute[key].Value}</div>
                 <div class="item__currency">руб.</div></div >`           
         }       
-    }
+    } 
 }
 
 xhr.addEventListener('readystatechange', handler);
