@@ -5,11 +5,11 @@ editor.oninput = () => {
     localStorage.text = editor.value;      
 }
 
-if (localStorage.text) {
-    editor.innerText = localStorage.text;
-}
+editor.innerText = localStorage.getItem('text');
+// Если значение будет отсутствовать в локальном хранилище, то getItem вернёт null, который никак не повлияет на поле ввода
 
 resetBtn.onclick = () => {
-    localStorage.clear();
+    //localStorage.clear(); Старайтесь не очищать локальное хранилище полностью. Так как в нём могут находиться и другие данные
+    localStorage.removeItem('text');
     editor.innerText = '';
 }

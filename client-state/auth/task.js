@@ -24,9 +24,11 @@ document.getElementById('signin__form').addEventListener('submit', (event) => {
     const formData = new FormData(document.getElementById('signin__form'));
 
     xhr.addEventListener('load', () => {
+        /*
         if (xhr.status !== 200) {
             alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
-        }
+        } событие load будет выполняться тогда, когда запрос завершится успешно. Так что, условие if (xhr.status !== 200) всегда будет ложным
+        */
         if (xhr.response.success === false) {
             alert('Неправильный логин/пароль');
             login.value = '';
@@ -47,6 +49,6 @@ document.getElementById('signout__btn').addEventListener('click', (event) => {
     welcome.classList.remove('welcome_active');
     login.value = '';
     password.value = '';
-    localStorage.clear();
+    localStorage.removeItem('userId');
     signinForm.classList.add('signin_active');
 })
