@@ -41,7 +41,18 @@
   display: none;
 }
 
+.welcome_text {
+  padding: 15px;
+}
+
+#signout__btn {
+  margin-left: auto;
+  margin-right: auto;
+  width: 120px;
+}
+
 .welcome_active {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
